@@ -1,0 +1,15 @@
+//ejemplo enlace de datos de modelo con la etiqueta
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Enlace de datos</title>
+	</head>
+	<body ng-app=>//inicia app
+		<div>
+			<input type="text" ng-model="miNombre">
+			<p ng-init="miNombre='Ivan'">{{ miNombre }}</p>
+			<input type="button" value="Diego"ng-click="miNombre='Diego'">
+		</div>
+		<script src="js/angular.min.js"></script>
+	</body>
+</html>

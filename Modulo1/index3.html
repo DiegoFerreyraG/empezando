@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Directivas comunes</title>
+	<style >
+		.error{
+			color:red;
+			background-color: yellow;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		div{
+			padding: 20 0 20 0;
+		}
+	</style>
+</head>
+<body ng-app>
+<!--Inicar variables-->
+	<div>ng-init</div>
+	<span ng-init="x=5; y=100; persona={nombre:'Diego',apellido:'Ferreyra'}">
+		{{x + ", " + y + " " +persona.nombre + " " + persona.apellido}}
+	</span>
+	<div>ng-if</div>
+<!--Evento click, se pone elcódigo dentro del ng-click-->
+	<div>ng-click</div>
+	<input type="button" value="incrementar" ng-click="contador = contador + 1" ng-init="contador=0">
+	{{contador}}
+	<!--Escuchar con el evento-->
+	<div>ng-mouseOver</div>
+<input type="button" value="incrementar" ng-mouseOver="contador2 = contador2 + 1" ng-init="contador2=0">
+	{{contador2}}
+	<div>ng-dblclick</div>
+	<input type="button" value="incrementar" ng-dblclick="contador3 = contador3 + 1" ng-init="contador3=0">
+	{{contador3}}
+	<div>ng-keypress</div>
+	<input type="text" ng-keypress="contador4 = contador4 + 1" ng-init="contador3=4">
+	{{contador4}}
+	<div>ng-show ng-hide</div>
+		<input type="checkbox" ng-model="showHide">
+		<br/>
+		<div>
+			<span ng-show="showHide">
+				Show está seleccionado
+			</span>
+		</div>
+		<div>
+			<span ng-hide="showHide">
+				Show no está seleccionado
+			</span>
+		</div>
+
+	<div>ng-repeat</div>
+	{% spaceless %}
+	    
+	{% endspaceless %}
+
+	<div>ng-class</div>
+		<!--añadir clases dinamicamente-->
+		<input type="text" ng-model="estilo1">
+		<p ng-class="estilo1">ng.class test 1 </p>
+	
+		<input type="text" ng-model="estilo2">
+		<input type="text" ng-model="estilo3">
+		<p ng-class="[estilo2, estilo3]">ng.class test 2 </p>
+
+		<input type="checkbox" ng-model="usarError"> Error
+		<input type="checkbox" ng-model="usarBold"> Bold
+		<p ng-class="{'error':usarError, 'bold':usarBold}">ng.class test 3 </p>
+		<!--Objeto JSON-->
+		
+
+		
+	<script src="js/angular.min.js"></script>
+
+</body>
+</html>

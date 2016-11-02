@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Directivas personalizadas</title>
+</head>
+<body ng-app="miModulo">
+	<div ng-controller="miControlador">
+		<mi-directiva libro-autor="{{libro.autor}}"" libro-titulo="{{libro.titulo}}" libro-objeto="libro"></mi-directiva> <!--Elemento -->
+	</div>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

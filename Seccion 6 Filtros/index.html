@@ -1,0 +1,39 @@
+<html ng-app="filtros">
+    <head>
+        <title>filtros</title>
+    </head>
+    <body>
+        
+        <div ng-controller="FiltrosController">
+           {{'buenos días'| uppercase | limitTo:10}} <!--filtro-->
+            </br>
+             {{'buenos días'| limitTo:-3}}
+            </br>
+            {{200 | currency}}
+            </br>
+                {{ hoy | date:'fullDate'}} más filtros en docs.angularjs.org/api
+        </div>
+        <div ng-controller="FiltrosController">
+           {{dias | filter:'o'}} <!--que contenfan la letra o-->
+            </br>
+        </div>
+
+        <div ng-controller="FiltrosController">
+           {{ 
+            personas | filter:{'nacionalidad':'Mexicano'} 
+            }} <!--filtra JSON-->
+            </br>
+        </div>
+        <div ng-controller="FiltrosController">
+           {{"Habia una vez" |limitTo:5 | suspensivos }} <!--filtra JSON-->
+            </br>
+        </div>
+        <div ng-controller="FiltrosController">
+           {{"habia una vez" | primeraMayusculas | limitTo:8 | suspensivos}} <!--filtra JSON-->
+            </br>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+
+</html>
